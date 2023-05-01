@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <title>Github Favorites</title>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="app">
-        <header>
-            <h1>Github Favorites</h1>
-            <div class="search">
-                <label for="input-search">Github User</label>
-                <input type="text" id="input-search" placeholder="User do Github">
-                <button>&plus;</button>
-            </div>
-        </header>
-        <table>
-            <thead>
-                <tr>
-                    <th>User</th>
-                    <th>repository</th>
-                    <th>followers</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="user">
-                        <img src="https://github.com/jefmaeda.png" alt="">
-                        <a href="https://github.com/jefmaeda" target="_blank">
-                            <p>Jef Maeda</p>
-                            <span>jefmaeda</span>
-                        </a>
-                    </td>
-                    <td class="repository">
-                        76
-                    </td>
-                    <td class="followers">
-                        9000
-                    </td>
-                    <td>
-                        <button>&times;</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <header>
+        <h1>Github Favorites</h1>
+        <div class="search">
+          <label class="sr-only" for="input-search">Github User</label>
+          <input type="text" id="input-search" placeholder="User do Github" />
+          <button>&plus;</button>
+        </div>
+      </header>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>repository</th>
+            <th>followers</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="user">
+              <img src="https://github.com/jefmaeda.png" alt="" />
+              <a href="https://github.com/jefmaeda" target="_blank">
+                <p>Jef Maeda</p>
+                <span>jefmaeda</span>
+              </a>
+            </td>
+            <td class="repository">76</td>
+            <td class="followers">9000</td>
+            <td>
+              <button>&times;</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</body>
+  </body>
 </html>
