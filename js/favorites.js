@@ -16,28 +16,15 @@ export class Favorites {
   }
 
   load(){
-    
-    this.entries = [
-        {
-        login: 'jefmaeda',
-        name: "Jef Maeda",
-        public_repos: '79',
-        followers: '100'
-        },
-        {
-            login: 'maykbrito',
-            name: "Mayk Brito",
-            public_repos: '90',
-            followers: '120000'
-        },
-    ]
+    this.entries = JSON.parse(localStorage
+      .getItem('@github-favorites:')) || []
   }
 
   delete(user){
     const filteredEntries = this.entries.
     filter(entry => entry.login !== user.login)
-
-      console.log(filteredEntries)
+    this.entries = filteredEntries
+    this.update()
   }
 
 }
@@ -73,6 +60,7 @@ update(){
 
         this.tbody.append(row)
     })
+    
 }
 
 createRow(){
