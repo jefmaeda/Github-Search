@@ -31,7 +31,13 @@ export class Favorites {
             followers: '120000'
         },
     ]
-    
+  }
+
+  delete(user){
+    const filteredEntries = this.entries.
+    filter(entry => entry.login !== user.login)
+
+      console.log(filteredEntries)
   }
 
 }
@@ -57,6 +63,13 @@ update(){
         row.querySelector('.user span').textContent=user.login
         row.querySelector('.repository').textContent=user.public_repos
         row.querySelector('.followers').textContent=user.followers
+
+        row.querySelector('.remove').onclick = () => {
+          const isOk = confirm('Are you sure want to delete this line?')
+          if (isOk) {
+            this.delete(user)
+          }
+        }
 
         this.tbody.append(row)
     })
