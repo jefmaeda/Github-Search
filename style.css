@@ -151,6 +151,7 @@ td.user a p {
 }
 
 td .remove{
+    cursor: pointer;
     background: none;
     border: none;
     color: red;
