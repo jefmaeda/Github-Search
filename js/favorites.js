@@ -1,5 +1,3 @@
-
-
 import { GithubUser } from "./githubUser.js";
 
 //class 1
