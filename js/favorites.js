@@ -1,28 +1,6 @@
-/*
-// class 1 vai conter a logica dos dados, como os dados serao estruturados
-this responsible for date in table
 
-unity of class is "heritage -> extends"
 
-// class 2 vai criar a visualização e eventos do HTML
-this responsible for creating the HTML
-*/
-
-//class 0
-export class GithubUser {
-  static search(username) {
-    const endpoint = `https://api.github.com/users/${username}`;
-
-    return fetch(endpoint)
-      .then((data) => data.json())
-      .then((data) => ({
-        login: data.login,
-        name: data.name,
-        public_repos: data.public_repos,
-        followers: data.followers,
-      }));
-  }
-}
+import { GithubUser } from "./githubUser.js";
 
 //class 1
 export class Favorites {
@@ -44,6 +22,13 @@ export class Favorites {
 
   async add(username) {
     try {
+        const userExists = this.entries.find(entry => entry.login === username)
+
+        if(userExists){
+          throw new Error('User already registered')
+        }
+
+
       const user = await GithubUser.search(username);
       console.log(user);
 
